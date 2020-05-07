@@ -1,0 +1,289 @@
+<html><head>
+    <title>Entertainment Booking Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<script src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js'></script>
+
+<script type="text/javascript">
+        function addFields(){
+            // Number of inputs to create
+            var number = document.getElementById("member").value;
+            // Container <div> where dynamic content will be placed
+            var container = document.getElementById("Line");
+            // Clear previous contents of the container
+            while (container.hasChildNodes()) {
+                container.removeChild(container.lastChild);
+            }
+            for (i=0;i<number;i++){
+                // Append a node with a random text
+                 //container.appendChild(document.createTextNode("Member " + (i+1)));
+                // Create an <input> element, set its type and name attributes
+                var input1 = document.createElement("input");
+                var input2 = document.createElement("input");
+                var input3 = document.createElement("input");
+                var input4 = document.createElement("input");
+                var input5 = document.createElement("input");
+                input1.type = "text";
+                input1.name = "a1" + i;
+                input2.type = "text";
+                input2.name = "a2" + i;
+                input3.type = "text";
+                input3.name = "a3" + i;
+                input4.type = "text";
+                input4.name = "a4" + i;
+                input5.type = "text";
+                input5.name = "a5" + i;
+                input1.placeholder = "Description";
+                input2.placeholder = "Quantity";
+                input3.placeholder = "UnitAmount";
+                input4.placeholder = "AccountCode";
+                input5.placeholder = "DiscountRate";
+                container.appendChild(input1);
+                
+                container.appendChild(input2);
+                container.appendChild(input3);
+                container.appendChild(input4);
+                container.appendChild(input5);
+
+
+                // Append a line break 
+                container.appendChild(document.createElement("hr"));
+            }
+        }
+</script>
+    <style>
+      html, body {
+      min-height: 100%;
+      }
+      body, div, form, input, select, textarea, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+      }
+      h1 {
+      position: absolute;
+      margin: 0;
+      font-size: 32px;
+      color: #fff;
+      z-index: 2;
+      }
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px;
+      }
+      form {
+      width: 100%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 20px 0 #a82877; 
+      }
+      .banner {
+      position: relative;
+      height: 210px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      }
+      .banner::after {
+      content: "";
+      background-color: rgba(0, 0, 0, 0.5); 
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      }
+      input, textarea, select {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      }
+      select {
+      width: 100%;
+      padding: 7px 0;
+      background: transparent;
+      }
+      textarea {
+      width: calc(100% - 12px);
+      padding: 5px;
+      }
+      .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+      color: #a82877;
+      }
+      .item input:hover, .item select:hover, .item textarea:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 6px 0 #a82877;
+      color: #a82877;
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      }
+      input[type="date"]::-webkit-inner-spin-button {
+      display: none;
+      }
+      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      font-size: 20px;
+      color: #a9a9a9;
+      }
+      .item i {
+      right: 1%;
+      top: 30px;
+      z-index: 1;
+      }
+      [type="date"]::-webkit-calendar-picker-indicator {
+      right: 0;
+      z-index: 2;
+      opacity: 0;
+      cursor: pointer;
+      }
+      input[type="time"]::-webkit-inner-spin-button {
+      margin: 2px 22px 0 0;
+      }
+      input[type=radio], input.other {
+      display: none;
+      }
+      label.radio {
+      position: relative;
+      display: inline-block;
+      margin: 5px 20px 10px 0;
+      cursor: pointer;
+      }
+      .question span {
+      margin-left: 30px;
+      }
+      label.radio:before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 0;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+      }
+      #radio_5:checked ~ input.other {
+      display: block;
+      }
+      input[type=radio]:checked + label.radio:before {
+      border: 2px solid #a82877;
+      background: #a82877;
+      }
+      label.radio:after {
+      content: "";
+      position: absolute;
+      top: 7px;
+      left: 5px;
+      width: 7px;
+      height: 4px;
+      border: 3px solid #fff;
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+      opacity: 0;
+      }
+      input[type=radio]:checked + label:after {
+      opacity: 1;
+      }
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px; 
+      background: #a82877;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background: #bf1e81;
+      }
+      @media (min-width: 568px) {
+      .name-item, .city-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      }
+      .name-item input, .city-item input {
+      width: calc(50% - 20px);
+      }
+      .city-item select {
+      width: calc(50% - 8px);
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="testbox">
+      <form action="sendForm" method="post">
+        {% csrf_token %}
+        <div class="banner">
+          <h1>Invoice input Form</h1>
+        </div>
+        <div class="item">
+          <p>Select Invoice Type</p>          
+          <select name="intype">
+              <option value="1">ACCPAY</option>
+              <option value="2">ACCREC</option>            
+          </select>
+        </div>
+         <div class="item">
+          <p>Contact ID</p>
+          <input type="text" name="contactid">
+        </div>
+        <div class="item">
+          <p>Date of Invoice issued</p>
+          <input type="date" name="dis">
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+        <div class="item">
+          <p>Due date</p>
+          <input type="date" name="dd">
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+        <div class="item">
+          <p>LineAmountType</p>          
+          <select name="lat">
+              <option value="1"> Exclusive </option>
+              <option value="2"> Inclusive </option>
+             <option value="3"> NoTax </option>               
+          </select>
+        </div>
+        <p> LineItems</p>
+        <div class="item" id="Line">
+          
+<!--           <input type="text" name="name" placeholder="Description">
+          <input type="text" name="name" placeholder="Quantity">
+          <div class="city-item">
+            <input type="text" name="UnitAmount" placeholder="UnitAmount">
+            <input type="text" name="DiscountRate" placeholder="DiscountRate"> -->
+           
+          </div>
+                      
+          <input type="text" id="member" name="member" value="" placeholder="Total no. of Lineitems"><br />
+    <a href="#" id="filldetails" onclick="addFields()">Click Me to Start filling the details !!</a>
+        </div>
+        <div class="btn-block">
+
+          <button type="submit" href="/">SEND</button>
+        </div>
+      </form>
+    </div>
+  
+</body></html>
