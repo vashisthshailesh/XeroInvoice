@@ -12,8 +12,8 @@ import json
 
 def start_xero_auth_view(request):
 
-	client_id = "AD183F21098B428CA421325B96F3D8CA"
-	client_secret = "V4Wy1T1TbnRewtbCdkbrulVNBFWoAkUmmA6jBnjW4_V0Xpj3"
+	client_id = "___________________________"
+	client_secret = "_____________________________________"
 	credentials = OAuth2Credentials(client_id, client_secret, callback_uri="http://localhost:8000/logged/")
 	# credentials = PublicCredentials(client_id, client_secret)
 	authorization_url = credentials.generate_url()
